@@ -11,20 +11,19 @@ class TCGCard extends Model
     use HasFactory;
 
     /**
-    * $this->atributes['id'] - int - Product primary key
-    * $this->atributes['name'] - string - Product name
-    * $this->atributes['description'] - string - Product description
-    * $this->atributes['franchise'] - string - Product franchise
-    * $this->atributes['collection'] - string - Product collection
-    * $this->atributes['price'] - int - Product price
-    * $this->atributes['PSAgrade'] - string - Product PSAgrade
-    * $this->atributes['image'] - string - Product image
-    * $this->atributes['launchDate'] - date - Product launchDate
-    * $this->atributes['rarity'] - string - Product rarity
-    * $this->atributes['pullRate'] - float - Product pullRate //TODO: Change float in diagram
-    * $this->atributes['language'] - string - Product language
-    * $this->atributes['stock'] - int - Product stock
-    */
+     * $this->atributes['id'] - int - Product primary key
+     * $this->atributes['name'] - string - Product name
+     * $this->atributes['description'] - string - Product description
+     * $this->atributes['franchise'] - string - Product franchise
+     * $this->atributes['collection'] - string - Product collection
+     * $this->atributes['price'] - int - Product price
+     * $this->atributes['PSAgrade'] - string - Product PSAgrade
+     * $this->atributes['launchDate'] - date - Product launchDate
+     * $this->atributes['rarity'] - string - Product rarity
+     * $this->atributes['pullRate'] - float - Product pullRate
+     * $this->atributes['language'] - string - Product language
+     * $this->atributes['stock'] - int - Product stock
+     */
     protected $fillable = [
         'name',
         'description',
@@ -32,7 +31,6 @@ class TCGCard extends Model
         'collection',
         'price',
         'PSAgrade',
-        'image',
         'launchDate',
         'rarity',
         'pullRate',
@@ -110,16 +108,6 @@ class TCGCard extends Model
         $this->attributes['PSAgrade'] = $PSAgrade;
     }
 
-    public function getImage(): string
-    {
-        return $this->attributes['image'];
-    }
-
-    public function setImage($image): void
-    {
-        $this->attributes['image'] = $image;
-    }
-
     public function getLaunchDate(): Date
     {
         return $this->attributes['launchDate'];
@@ -169,5 +157,4 @@ class TCGCard extends Model
     {
         $this->attributes['stock'] = $stock;
     }
-
 }

@@ -11,9 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::rename('tcgcard', 't_c_g_cards');
         Schema::table('t_c_g_cards', function (Blueprint $table) {
-            $table->float('pullRate')->change();
+            $table->dropColumn('image');
         });
     }
 
@@ -23,9 +22,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('t_c_g_cards', function (Blueprint $table) {
-            $table->float('pullRate')->change();
+            $table->string('image')->nullable();
         });
-        Schema::rename('t_c_g_cards', 'tcgcard');
-
     }
 };
