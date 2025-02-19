@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\TCGCard;
+use App\Validators\TCGCardValidator;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
@@ -50,10 +51,7 @@ class TCGCardController extends Controller
         $viewData = []; // to be sent to the view
         $viewData['title'] = 'Successful Creation';
 
-        $request->validate([
-            'name' => 'required',
-            'price' => ['required', 'gt:0', 'numeric'],
-        ]);
+        $request->validate(TCGCardValidator::$rules);
         TCGCard::create($request->only(['name', 'description', 'franchise', 'collection', 'price', 'PSAgrade', 'launchDate', 'rarity', 'pullRate', 'language', 'stock']));
 
         return view('tcgCards.success')->with('viewData', $viewData);

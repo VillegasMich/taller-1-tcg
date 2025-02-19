@@ -28,18 +28,18 @@
                                     <form method="POST" action="{{ route('tcgCards.save') }}">
                                         @csrf
                                         <input type="text" class="form-control mb-2" placeholder="Enter name"
-                                            name="name" value="{{ old('name') }}" required />
+                                            name="name" value="{{ old('name') }}" />
                                         <textarea class="form-control mb-2" placeholder="Enter description" name="description">{{ old('description') }}</textarea>
                                         <input type="text" class="form-control mb-2" placeholder="Enter franchise"
-                                            name="franchise" value="{{ old('franchise') }}" required />
+                                            name="franchise" value="{{ old('franchise') }}" />
                                         <input type="text" class="form-control mb-2" placeholder="Enter collection"
-                                            name="collection" value="{{ old('collection') }}" required />
+                                            name="collection" value="{{ old('collection') }}" />
                                         <input type="number" step="0.01" class="form-control mb-2"
-                                            placeholder="Enter price" name="price" value="{{ old('price') }}" required />
+                                            placeholder="Enter price" name="price" value="{{ old('price') }}" />
                                         <input type="text" class="form-control mb-2" placeholder="Enter PSA grade"
                                             name="PSAgrade" value="{{ old('PSAgrade') }}" />
                                         <input type="date" class="form-control mb-2" name="launchDate"
-                                            value="{{ old('launchDate') }}" required />
+                                            value="{{ old('launchDate') }}" />
                                         <select class="form-control mb-2" name="rarity">
                                             <option value="" disabled selected>Select Rarity</option>
                                             <option value="common" {{ old('rarity') == 'common' ? 'selected' : '' }}>Common
@@ -54,7 +54,7 @@
                                         </select>
                                         <input type="text" class="form-control mb-2" placeholder="Enter pull rate"
                                             name="pullRate" value="{{ old('pullRate') }}" />
-                                        <select class="form-control mb-2" name="language" required>
+                                        <select class="form-control mb-2" name="language">
                                             <option value="" disabled selected>Select Language</option>
                                             <option value="Spanish" {{ old('language') == 'Spanish' ? 'selected' : '' }}>
                                                 Spanish
@@ -66,7 +66,7 @@
                                                 French
                                             </option>
                                         </select> <input type="number" class="form-control mb-2" placeholder="Enter stock"
-                                            name="stock" value="{{ old('stock') }}" min="0" required />
+                                            name="stock" value="{{ old('stock') }}" min="0" />
                                         <input type="submit" class="btn btn-primary" value="Send" />
                                     </form>
                                 </div>
