@@ -1,0 +1,7 @@
+1. Asegurarse que XAMPP tenga iniciada la base de datos MySQL
+2. Crear la base de datos llamada 'taller-1-tcg'
+3. Modificar el archivo .env con los datos correspondientes
+4. Ejecutar 'php artisan migrate'
+5. Ejecutar 'php artisan db:seed'
+6. Ejecutar 'php artisan serve'
+7. Ejecutar 'http://localhost:8000/'
