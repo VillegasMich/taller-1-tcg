@@ -5,7 +5,13 @@
     <div class="card mb-3">
         <div class="row g-0">
             <div class="col-md-4">
-                <img src="{{ asset('pokemon_card_backside.png') }}" class="img-fluid rounded-start">
+                @if ($viewData['tcgCard']['franchise'] == 'Pokemon')
+                    <img src="{{ asset('pokemon_card_backside.png') }}" class="img-fluid rounded-start">
+                @elseif ($viewData['tcgCard']['franchise'] == 'Yu-Gi-Oh!')
+                    <img src="{{ asset('yugioh_card_backside.png') }}" class="img-fluid rounded-start">
+                @else
+                    <img src="{{ asset('magic_card_backside.png') }}" class="img-fluid rounded-start">
+                @endif
             </div>
             <div class="col-md-8">
                 <div class="card-body">

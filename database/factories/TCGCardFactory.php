@@ -11,7 +11,7 @@ class TCGCardFactory extends Factory
         return [
             'name' => $this->faker->name(),
             'description' => $this->faker->text(),
-            'franchise' => $this->faker->company(),
+            'franchise' => $this->faker->randomElement(['Pokemon', 'Yu-Gi-Oh!', 'Magic: The Gathering']),
             'collection' => $this->faker->company(),
             'price' => $this->faker->numberBetween($min = 100, $max = 1000000),
             'PSAgrade' => $this->faker->randomElement(['1', '2', '3', '4', '5', '6', '7', '8', '9', '10']),

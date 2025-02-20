@@ -14,7 +14,7 @@ class TCGCard extends Model
      * $this->atributes['id'] - int - Product primary key
      * $this->atributes['name'] - string - Product name
      * $this->atributes['description'] - string - Product description
-     * $this->atributes['franchise'] - string - Product franchise
+     * $this->atributes['franchise'] - string('Pokemon', 'Yu-Gi-Oh!', 'Magic: The Gathering') - Product franchise
      * $this->atributes['collection'] - string - Product collection
      * $this->atributes['price'] - int - Product price
      * $this->atributes['PSAgrade'] - string - Product PSAgrade

@@ -19,8 +19,8 @@
 
                                 <!-- Left Column: Image -->
                                 <div class="col-md-6 text-center">
-                                    <img src="{{ asset('pokemon_card_backside.png') }}" alt="TCG Card Image"
-                                        class="img-fluid">
+                                    <img id="franchiseImage" src="{{ asset('pokemon_card_backside.png') }}"
+                                        alt="TCG Card Image" class="img-fluid">
                                 </div>
 
                                 <!-- Right Column: Form -->
@@ -30,8 +30,20 @@
                                         <input type="text" class="form-control mb-2" placeholder="Enter name"
                                             name="name" value="{{ old('name') }}" />
                                         <textarea class="form-control mb-2" placeholder="Enter description" name="description">{{ old('description') }}</textarea>
-                                        <input type="text" class="form-control mb-2" placeholder="Enter franchise"
-                                            name="franchise" value="{{ old('franchise') }}" />
+                                        <select class="form-control mb-2" name="franchise" id="franchiseSelect">
+                                            <option value="" disabled selected>Select Franchise</option>
+                                            <option value="Pokemon" {{ old('franchise') == 'Pokemon' ? 'selected' : '' }}>
+                                                Pokemon
+                                            </option>
+                                            <option value="Yu-Gi-Oh!"
+                                                {{ old('franchise') == 'Yu-Gi-Oh!' ? 'selected' : '' }}>
+                                                Yu-Gi-Oh!
+                                            </option>
+                                            <option value="Magic: The Gathering"
+                                                {{ old('franchise') == 'Magic: The Gathering' ? 'selected' : '' }}>Magic:
+                                                The Gathering
+                                            </option>
+                                        </select>
                                         <input type="text" class="form-control mb-2" placeholder="Enter collection"
                                             name="collection" value="{{ old('collection') }}" />
                                         <input type="number" step="0.01" class="form-control mb-2"
@@ -77,5 +89,5 @@
             </div>
         </div>
     </div>
-    </div>
+    <script src="{{ asset('js/franchiseImage.js') }}"></script>
 @endsection
